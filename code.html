@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AgroCoop | Memberdayakan Petani Padi</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#191c1d",
+                    "on-error-container": "#93000a",
+                    "primary-fixed-dim": "#a1d494",
+                    "surface-tint": "#3b6934",
+                    "on-primary-fixed-variant": "#23501e",
+                    "tertiary-container": "#694932",
+                    "primary-container": "#2d5a27",
+                    "tertiary-fixed-dim": "#eabda0",
+                    "surface-container-low": "#f3f4f5",
+                    "surface-bright": "#f8f9fa",
+                    "primary-fixed": "#bcf0ae",
+                    "inverse-on-surface": "#f0f1f2",
+                    "outline": "#72796e",
+                    "on-tertiary-container": "#e6ba9d",
+                    "on-primary-container": "#9dd090",
+                    "on-tertiary": "#ffffff",
+                    "background": "#f8f9fa",
+                    "surface": "#f8f9fa",
+                    "surface-container": "#edeeef",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed": "#271900",
+                    "tertiary-fixed": "#ffdcc6",
+                    "on-surface-variant": "#42493e",
+                    "surface-dim": "#d9dadb",
+                    "secondary-container": "#fdc65c",
+                    "on-error": "#ffffff",
+                    "primary": "#154212",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "outline-variant": "#c2c9bb",
+                    "secondary": "#7c5800",
+                    "inverse-surface": "#2e3132",
+                    "on-tertiary-fixed": "#2d1604",
+                    "on-secondary": "#ffffff",
+                    "on-surface": "#191c1d",
+                    "inverse-primary": "#a1d494",
+                    "secondary-fixed-dim": "#f4be55",
+                    "on-primary-fixed": "#002201",
+                    "on-secondary-container": "#745200",
+                    "surface-container-highest": "#e1e3e4",
+                    "secondary-fixed": "#ffdea7",
+                    "tertiary": "#4f321d",
+                    "on-secondary-fixed-variant": "#5e4200",
+                    "surface-container-high": "#e7e8e9",
+                    "surface-variant": "#e1e3e4",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed-variant": "#5f402a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "stack-md": "16px",
+                    "margin-desktop": "48px",
+                    "margin-mobile": "16px",
+                    "stack-lg": "32px",
+                    "gutter": "24px",
+                    "section-padding": "80px",
+                    "stack-sm": "8px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Manrope"],
+                    "body-lg": ["Work Sans"],
+                    "label-caps": ["Work Sans"],
+                    "display-lg-mobile": ["Manrope"],
+                    "headline-md": ["Manrope"],
+                    "body-md": ["Work Sans"],
+                    "headline-sm": ["Manrope"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            z-index: 100;
+        }
+        .hero-gradient {
+            background: linear-gradient(to right, rgba(21, 66, 18, 0.9), rgba(21, 66, 18, 0.4));
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-surface-dim w-full top-0 sticky z-50 border-b border-outline-variant dark:border-outline">
+<div class="max-w-container-max mx-auto px-margin-desktop flex justify-between items-center h-20">
+<div class="flex items-center gap-2">
+<span class="font-display-lg text-display-lg text-primary dark:text-primary-fixed-dim">AgroCoop</span>
+</div>
+<nav class="hidden md:flex items-center gap-gutter font-body-md text-body-md">
+<a class="text-primary dark:text-primary-fixed-dim border-b-2 border-primary font-bold pb-1 transition-colors" href="#">Tentang Kami</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Produk &amp; Layanan</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Edukasi</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Kemitraan</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Kontak</a>
+</nav>
+<button class="bg-primary text-on-primary px-6 py-3 font-semibold rounded-lg hover:opacity-80 transition-opacity">
+                Pendaftaran Anggota
+            </button>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative h-[870px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0" data-alt="A panoramic view of vibrant, lush green terraced rice fields under a golden sunrise. The lighting is warm and ethereal, highlighting the texture of the rice stalks. The overall aesthetic is clean, professional, and tranquil, reflecting the prosperity and growth of modern corporate agriculture with a minimalist touch." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBroZME1qWOfy7vy5XQimuiPuOtFBZa366L6evPO5Uul3-ei8OCEaCf9vLbq_UwzoSF8n2kguHzzi59qQ5i8rTlJmlwJMcTgmCyB5zxXe-ya5tLudMUDDOBA_fy8xfoKkzTEz62DjZZhRHBj5yOfCakWqA1fv3Uo65fEb0VaBFXLMdJ5SpCY1P3sRxLOthzeSHzZlWY2ybVROQ2itFxIuf2DLWtt4yzd4Pa6HjbzQWFdrFOBtkcau662VIGm6z8tQuKok69FfDKl_o')"></div>
+<div class="absolute inset-0 hero-gradient z-10"></div>
+<div class="max-w-container-max mx-auto px-margin-desktop relative z-20 w-full">
+<div class="max-w-2xl">
+<h1 class="text-on-primary font-display-lg text-display-lg-mobile md:text-display-lg mb-stack-md">
+                        Memberdayakan Petani, Menyejahterakan Bangsa
+                    </h1>
+<p class="text-on-primary/90 font-body-lg text-body-lg mb-stack-lg">
+                        Melalui inovasi teknologi dan kolaborasi berkelanjutan, kami membangun ekosistem pertanian padi yang adil dan berdaya saing global.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-secondary-container text-on-secondary-container px-8 py-4 rounded-xl font-bold text-lg flex items-center gap-2 hover:scale-105 transition-transform">
+                            Mulai Kemitraan
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="border-2 border-on-primary text-on-primary px-8 py-4 rounded-xl font-bold text-lg hover:bg-on-primary/10 transition-colors">
+                            Pelajari Selengkapnya
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="py-section-padding bg-surface">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-surface-container-low p-stack-lg border-b-4 border-secondary rounded-lg text-center transform hover:-translate-y-2 transition-transform">
+<span class="material-symbols-outlined text-secondary text-5xl mb-stack-sm" style="font-variation-settings: 'FILL' 1;">groups</span>
+<h3 class="font-display-lg text-display-lg text-primary" id="counter-members">0</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Jumlah Anggota</p>
+</div>
+<div class="bg-surface-container-low p-stack-lg border-b-4 border-secondary rounded-lg text-center transform hover:-translate-y-2 transition-transform">
+<span class="material-symbols-outlined text-secondary text-5xl mb-stack-sm" style="font-variation-settings: 'FILL' 1;">agriculture</span>
+<h3 class="font-display-lg text-display-lg text-primary" id="counter-land">0</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Luas Lahan (Ha)</p>
+</div>
+<div class="bg-surface-container-low p-stack-lg border-b-4 border-secondary rounded-lg text-center transform hover:-translate-y-2 transition-transform">
+<span class="material-symbols-outlined text-secondary text-5xl mb-stack-sm" style="font-variation-settings: 'FILL' 1;">eco</span>
+<h3 class="font-display-lg text-display-lg text-primary" id="counter-harvest">0</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Panen (Ton/Tahun)</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Tentang Kami -->
+<section class="py-section-padding bg-surface-bright">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div class="relative">
+<div class="aspect-square rounded-full overflow-hidden border-8 border-surface-container-highest shadow-xl" data-alt="A portrait of a smiling Indonesian rice farmer standing proudly in a sun-drenched field, holding a bundle of golden harvested rice. The image is crisp and clear, captured in a warm, professional corporate style with high contrast. The background is a soft-focus lush landscape, emphasizing the connection between the farmer and the land." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAp1n934fFUbWppHnPqglWv4L5nwhrSTJ9T_HW5fB-oVVC97uS8Chc5dQXaZE4l_0NqUpF0wQx0q6tcfIjlJcAoWFqKUtIFcZ2cwnVlEF7QkA8ljWzoBub_3l-hAVm5TwYhqzadgfg0YAcB3kQHN_zJTEyfSMwcaeRRP7DzKN5Slnu2jD6HSEQe4hkBTRQQUp41VoaOGIL0GEaM5WUulvLuXPXDYkS3e-hmvoIx_Hm9QzzmZ_0fmANKW9A-VU5XXhTwAPI_8gd35uo')"></div>
+<div class="absolute -bottom-8 -right-8 bg-primary p-8 rounded-2xl text-on-primary hidden lg:block">
+<p class="font-display-lg text-display-lg-mobile italic">Sejak 1995</p>
+<p class="font-label-caps text-label-caps">Berdedikasi untuk Negeri</p>
+</div>
+</div>
+<div class="space-y-stack-lg">
+<div>
+<span class="text-secondary font-bold font-label-caps uppercase tracking-widest">Siapa Kami</span>
+<h2 class="text-primary font-display-lg text-headline-md md:text-display-lg mt-2 mb-stack-md">Menjaga Warisan, Menciptakan Masa Depan</h2>
+<p class="text-on-surface-variant font-body-lg">Berawal dari inisiatif sekelompok petani lokal di Jawa Tengah, AgroCoop kini telah berkembang menjadi koperasi agribisnis modern yang melayani ribuan petani di seluruh Indonesia.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-stack-md">
+<div class="p-stack-md bg-white rounded-xl shadow-sm border border-outline-variant">
+<h4 class="font-bold text-primary mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">visibility</span> Visi
+                                </h4>
+<p class="text-sm text-on-surface-variant">Menjadi koperasi tani terbaik di Asia Tenggara yang mandiri dan berkelanjutan.</p>
+</div>
+<div class="p-stack-md bg-white rounded-xl shadow-sm border border-outline-variant">
+<h4 class="font-bold text-primary mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">task_alt</span> Misi
+                                </h4>
+<p class="text-sm text-on-surface-variant">Meningkatkan produktivitas petani melalui mekanisasi dan akses modal yang adil.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Values -->
+<div class="mt-20">
+<h3 class="text-center font-headline-md text-primary mb-12">Nilai-Nilai Utama Kami</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="text-center p-stack-lg group">
+<div class="w-16 h-16 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center mx-auto mb-stack-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">verified_user</span>
+</div>
+<h4 class="font-bold text-headline-sm mb-2">Integritas</h4>
+<p class="text-on-surface-variant">Kejujuran dan transparansi dalam setiap butir beras dan setiap transaksi.</p>
+</div>
+<div class="text-center p-stack-lg group">
+<div class="w-16 h-16 bg-secondary-container text-on-secondary-container rounded-full flex items-center justify-center mx-auto mb-stack-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">handshake</span>
+</div>
+<h4 class="font-bold text-headline-sm mb-2">Gotong Royong</h4>
+<p class="text-on-surface-variant">Kekuatan kami terletak pada kebersamaan dan kerja sama antar seluruh anggota.</p>
+</div>
+<div class="text-center p-stack-lg group">
+<div class="w-16 h-16 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center mx-auto mb-stack-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">trending_up</span>
+</div>
+<h4 class="font-bold text-headline-sm mb-2">Unggul</h4>
+<p class="text-on-surface-variant">Berkomitmen untuk terus berinovasi mencapai standar kualitas tertinggi.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Legalitas & Sertifikasi -->
+<section class="py-16 bg-surface-container">
+<div class="max-w-container-max mx-auto px-margin-desktop text-center">
+<p class="font-label-caps text-on-surface-variant mb-stack-lg uppercase tracking-[0.2em]">Kualitas &amp; Standar Internasional</p>
+<div class="flex flex-wrap justify-center items-center gap-12 md:gap-20 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+<div class="flex flex-col items-center gap-2">
+<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1;">eco</span>
+</div>
+<span class="font-bold text-sm">Organik Indonesia</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-secondary text-4xl" style="font-variation-settings: 'FILL' 1;">grade</span>
+</div>
+<span class="font-bold text-sm">Beras Premium</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<span class="font-bold text-sm">Halal Indonesia</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-secondary text-4xl" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+<span class="font-bold text-sm">BPOM RI</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Struktur Organisasi -->
+<section class="py-section-padding bg-surface">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="text-primary font-display-lg text-headline-md md:text-display-lg mb-4">Pengurus Koperasi</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Dipimpin oleh individu-individu berpengalaman yang berdedikasi tinggi untuk kemajuan ekonomi kerakyatan.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Leader 1 -->
+<div class="bg-white p-4 rounded-2xl shadow-sm border border-outline-variant hover:shadow-lg transition-shadow">
+<div class="aspect-[4/5] rounded-xl mb-4 overflow-hidden" data-alt="A professional portrait of an Indonesian man in his 50s, wearing a formal batik shirt. He has a warm, trustworthy expression. The photograph is shot in a professional studio setting with clean, soft-box lighting. Minimalist and corporate aesthetic, reflecting leadership and experience in agricultural management." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAwz0AEKUh8bgogudGzMRaTELsPv32PO2cic6F6wT5mYauD5cwofIIKJmUmq1lxIQTtFg5VmuqdhXVrhNMjhhtum6Qzo7AUXol7bupj-_bQ8D6FcCUmGo6j01bfZzuf5LND7JadYK8VGaljDyr2LQohnXP566JiPFG9OuDFVD1luWa4OTeJgFxdApxmvgYyCl9l2CDz1W4ldfzpCKcch6Tk_IVBGJPrAWKVRzVbcd32fBemNi7slRVhUlsRvcxWR4Xsew7chZQpCx0')"></div>
+<h4 class="font-bold text-headline-sm text-primary">Budi Santoso</h4>
+<p class="text-secondary font-medium">Ketua Umum</p>
+</div>
+<!-- Leader 2 -->
+<div class="bg-white p-4 rounded-2xl shadow-sm border border-outline-variant hover:shadow-lg transition-shadow">
+<div class="aspect-[4/5] rounded-xl mb-4 overflow-hidden" data-alt="A professional portrait of an Indonesian woman in her 40s, wearing a smart casual blazer over a subtle batik pattern. She exudes confidence and professionalism. High-quality corporate photography, bright and clear, emphasizing transparency and modern management style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDZnFYdsmWPPl3Dq95ctB8zGftHsXTLRU5Nfw6E9ueK5BFz7-juf8Vn62f3peST53x0tWCA_VZz611z3cIzQ-_jKf_dc0dacLDHX5OGBBdlmXZkR4Y03sW5ej3OvP435hASu9nlmVioTuR99Mwkzs0ljBtrxLtDgUqU4UWazNuwmzNqzSNN7s5wudZuymH8zRN0lNawjlZc9mSF4xydx1wOjrr758SH_P3Gh3X6zP9z2v1rLznrG7F9MAYoIbPOee9iSNp5_Jt0nMg')"></div>
+<h4 class="font-bold text-headline-sm text-primary">Siti Aminah</h4>
+<p class="text-secondary font-medium">Sekretaris</p>
+</div>
+<!-- Leader 3 -->
+<div class="bg-white p-4 rounded-2xl shadow-sm border border-outline-variant hover:shadow-lg transition-shadow">
+<div class="aspect-[4/5] rounded-xl mb-4 overflow-hidden" data-alt="A professional corporate headshot of a middle-aged Indonesian man in a clean white shirt, looking approachable and determined. Soft lighting, neutral background, reflecting a reliable and professional institutional persona. High attention to detail in the lighting and composition." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA6Vi5ewNKtEgGzqhgS-J7q9BWAzyK8KXmoteq3rGI4NmtjvAxzJUoBvuBSy3s7deUB1OfpMCZ6j0wudHE9JKdOJUxzSQ6gagRVuFLwFlFh3aJSCUkjuaUdMrF4n0x00MRv7Pkh59ZyXmii9tbYCPbRSB9IipJVyjwXbOkINktWnRRC2iE3UUfU_1-Myp5nlFqnR_viilDp5-USqGY_KLMHYmODu_Jfse5M7eEXA6s_8VJjny32dQCLIGQK1McNC0fvf2YS9c53-Fk')"></div>
+<h4 class="font-bold text-headline-sm text-primary">Andi Wijaya</h4>
+<p class="text-secondary font-medium">Bendahara</p>
+</div>
+<!-- Leader 4 -->
+<div class="bg-white p-4 rounded-2xl shadow-sm border border-outline-variant hover:shadow-lg transition-shadow">
+<div class="aspect-[4/5] rounded-xl mb-4 overflow-hidden" data-alt="A professional portrait of an Indonesian man in his late 30s, wearing a field vest over a button-down shirt, symbolizing the bridge between corporate management and field operations. Bright, airy, and professional aesthetic, emphasizing innovation and field expertise." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAwShX0d65RkY33OuGVkoVQDse1WYqHHizcj3z8AaDwQy8vMkXl4Su2hcLScrRef9-5lCmJ-sW-3Zhj07PDPSzvgkMVfIcwa357zKmszKGdR5DOqw92FeSVvBHstfuRYOERsFAuVGzuohe3KajhDUaHYEoT0RQZtr80CTxX6fEjf_g4P7NWVsofARXVvQiKZID-wSMiysGhcuL0YcScOJgjtfthQyol0g3RIbx_n8Ixu_V3xjlkX2HaQzzqUHrCT0-SP-3xWysqW2I')"></div>
+<h4 class="font-bold text-headline-sm text-primary">Hendra Putra</h4>
+<p class="text-secondary font-medium">Kepala Divisi Operasional</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-20 bg-primary overflow-hidden relative">
+<div class="absolute inset-0 opacity-10" data-alt="A stylized pattern of rice grain illustrations in white, repeating across a dark forest green background. Minimalist, geometric, and modern corporate agricultural texture." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAKgWuxMT91BHUT2O5OmSUxcDUoHvRHEgrQyeJNkoOjlByOaJ7Fw5jgdE5LMHLkzMrTyR8rn8rBuhbWPmhTEX1VSSp_ibf8nlw8QMl5iOSs6MD8ZBJXq6VjBlHyc8wg4O3bUh_40zOTVVz6bGmcWcfoq_BY8bR01BZyIyn1c6NDBe_YofWOrkWouW9KUfUCA_cpw2VZWfbtzHoeOecSlKBb1G2RZkvKpRN2cIm_2nAmMq0vfUDlFis4osOPv-vopM5ZQk41sM5rMzg')"></div>
+<div class="max-w-container-max mx-auto px-margin-desktop text-center relative z-10">
+<h2 class="text-on-primary font-display-lg text-headline-md md:text-display-lg mb-stack-md">Siap Menjadi Bagian dari Perubahan?</h2>
+<p class="text-on-primary/80 max-w-xl mx-auto mb-10 text-body-lg">Bergabunglah dengan AgroCoop hari ini dan rasakan manfaat nyata dari koperasi yang modern dan transparan.</p>
+<div class="flex justify-center gap-4 flex-wrap">
+<button class="bg-secondary-container text-on-secondary-container px-10 py-4 rounded-full font-bold hover:scale-105 transition-transform">Daftar Sekarang</button>
+<button class="bg-transparent border border-on-primary text-on-primary px-10 py-4 rounded-full font-bold hover:bg-on-primary/10 transition-colors">Hubungi Kami</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-surface-container-low w-full mt-auto">
+<div class="max-w-container-max mx-auto px-margin-desktop py-section-padding grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="col-span-1 md:col-span-1">
+<span class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed-dim block mb-stack-md">AgroCoop</span>
+<p class="text-on-surface-variant font-body-md leading-relaxed">
+                    Koperasi Petani Padi Sejahtera terdepan dalam inovasi pertanian dan pemberdayaan ekonomi lokal.
+                </p>
+</div>
+<div>
+<h5 class="font-bold text-primary mb-stack-md">Navigasi</h5>
+<ul class="space-y-2">
+<li><a class="text-on-surface-variant hover:text-secondary underline transition-all" href="#">Tentang Kami</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary underline transition-all" href="#">Program Kemitraan</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary underline transition-all" href="#">Laporan Tahunan</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-primary mb-stack-md">Bantuan</h5>
+<ul class="space-y-2">
+<li><a class="text-on-surface-variant hover:text-secondary underline transition-all" href="#">Informasi Kontak</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary underline transition-all" href="#">Lokasi Gudang</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary underline transition-all" href="#">Syarat &amp; Ketentuan</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-primary mb-stack-md">Newsletter</h5>
+<p class="text-sm text-on-surface-variant mb-4">Dapatkan update terbaru seputar pertanian.</p>
+<div class="flex">
+<input class="w-full bg-white border border-outline-variant rounded-l-lg px-4 py-2 focus:ring-2 focus:ring-primary focus:outline-none" placeholder="Email Anda" type="email"/>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-r-lg font-bold">Kirim</button>
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant max-w-container-max mx-auto px-margin-desktop py-8 text-center text-sm text-on-surface-variant">
+            © 2024 Koperasi Petani Padi Sejahtera. Seluruh Hak Cipta Dilindungi.
+        </div>
+</footer>
+<!-- WhatsApp Floating Button -->
+<a class="whatsapp-float bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform focus:outline-none focus:ring-4 focus:ring-green-300" href="https://wa.me/628123456789" target="_blank">
+<svg class="w-10 h-10 fill-current" viewbox="0 0 24 24">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+</svg>
+</a>
+<script>
+        // Simple Intersection Observer for Counter Animation
+        const animateCounters = () => {
+            const counters = [
+                { id: 'counter-members', target: 1500, suffix: '+' },
+                { id: 'counter-land', target: 500, suffix: ' Ha' },
+                { id: 'counter-harvest', target: 10000, suffix: ' Ton' }
+            ];
+
+            const observerOptions = {
+                threshold: 0.5
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = counters.find(c => c.id === entry.target.id);
+                        if (counter) {
+                            let current = 0;
+                            const increment = counter.target / 50;
+                            const timer = setInterval(() => {
+                                current += increment;
+                                if (current >= counter.target) {
+                                    entry.target.innerText = counter.target.toLocaleString() + counter.suffix;
+                                    clearInterval(timer);
+                                } else {
+                                    entry.target.innerText = Math.floor(current).toLocaleString() + counter.suffix;
+                                }
+                            }, 30);
+                            observer.unobserve(entry.target);
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            counters.forEach(c => {
+                const el = document.getElementById(c.id);
+                if (el) observer.observe(el);
+            });
+        };
+
+        window.addEventListener('DOMContentLoaded', animateCounters);
+    </script>
+</body></html>
